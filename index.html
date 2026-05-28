@@ -1,1 +1,35 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astrology App</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-600 text-white p-4">
+        <h1 class="text-3xl font-bold">Astrology App</h1>
+    </header>
+    <main class="p-4">
+        <section class="mb-6">
+            <h2 class="text-2xl font-semibold">Discover Your Horoscope</h2>
+            <p class="mt-2">Enter your birth date to find out your horoscope!</p>
+            <input type="date" id="birthdate" class="mt-2 p-2 border border-gray-300 rounded">
+            <button id="submit" class="mt-2 bg-blue-600 text-white p-2 rounded">Get Horoscope</button>
+        </section>
+        <section id="horoscope" class="hidden">
+            <h2 class="text-xl font-semibold">Your Horoscope</h2>
+            <p id="horoscope-text" class="mt-2"></p>
+        </section>
+    </main>
+    <script>
+        document.getElementById('submit').addEventListener('click', function() {
+            const birthdate = document.getElementById('birthdate').value;
+            // Simple horoscope logic (for demonstration purposes)
+            const horoscopeText = `Your horoscope for ${birthdate} is: Great things are coming your way!`;
+            document.getElementById('horoscope-text').innerText = horoscopeText;
+            document.getElementById('horoscope').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
